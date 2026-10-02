@@ -1,9 +1,13 @@
 /**
 * CORE CONFIG
 * This powers everything from utility class generation to breakpoints
-* to enabling/disabling features. You can customize this file to your liking.
+* to enabling/disabling features.
 */
-/* Box Sizing Rules*/
+
+/* ========================================
+   BOX SIZING
+======================================== */
+
 *,
 *::before,
 *::after {
@@ -11,74 +15,109 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Remove default margin */
-body,
+
+/* ========================================
+   BASIC RESET
+======================================== */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    letter-spacing: -0.01px;
+    font-size: var(--step-0);
+}
+
 h1,
- .h1 {
+.h1 {
     font-size: var(--step-5);
- }
+}
+
 h2,
- .h2 {
+.h2 {
     font-size: var(--step-4);
- }
+}
+
 h3,
- .h3 {
+.h3 {
     font-size: var(--step-3);
- }
+}
+
 h4,
-    .h4 {
-        font-size: var(--step-2);
-    }
+.h4 {
+    font-size: var(--step-2);
+}
+
 h5,
-    .h5 {
-        font-size: var(--step-1);
-    }
+.h5 {
+    font-size: var(--step-1);
+}
+
 p,
 figure,
 blockquote,
 dl,
 dd {
     margin: 0;
-}   
-
-/* Remove list styles on ul, ol elements with a list role, 
-* which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] { 
-    list-style: none;
 }
 
-/* Set core root defaults */
+
+/* ========================================
+   LIST RESET
+======================================== */
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================
+   ROOT DEFAULTS
+======================================== */
+
 html:focus-within {
     scroll-behavior: smooth;
 }
 
-/* Set core body defaults */
-body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    letter-spacing: -0.01px;
-}
 
-/* A elements that don't have a class get default styles */
+/* ========================================
+   LINKS
+======================================== */
+
 a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
+
+/* ========================================
+   IMAGES
+======================================== */
+
 img,
 picture {
     max-width: 100%;
     display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
+
+/* ========================================
+   FORM ELEMENTS
+======================================== */
+
 input,
 button,
 textarea,
 select {
     font: inherit;
 }
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
@@ -95,146 +134,212 @@ main:focus {
     outline: none;
 }
 
-/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+/* ========================================
+   RESPONSIVE FONT SIZES
+======================================== */
 
 :root {
-  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
-  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
-  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
-  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
-  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
-  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
-  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+    --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+    --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+    --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+    --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
 }
 
-/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+/* ========================================
+   RESPONSIVE SPACING
+======================================== */
 
 :root {
-  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
-  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
-  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
-  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
-  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
-  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
-  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
-  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+    --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+    --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+    --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+    --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+    --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+    --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+    --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+    --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
 }
 
-/* define some contsraints */
+
+/* ========================================
+   FLEX UTILITIES
+======================================== */
+
 .flex {
     display: flex;
     align-items: center;
     gap: var(--space-s);
 }
+
+.flex_center {
+    justify-content: center;
+}
+
+.flex_around {
+    justify-content: space-around;
+}
+
+.flex_between {
+    justify-content: space-between;
+}
+
 @media (max-width: 468px) {
     .flex {
         flex-wrap: wrap;
     }
-}
-.flex_center {
-    justify-content: center;
-}
-.flex_around {
-    justify-content: space-around;
-}
-.flex_between {
-    justify-content: space-between;
-}
-@media (max-width: 468px) {
+
     .flex_around {
         justify-content: center;
     }
 }
-.flex_between {
-    justify-content: space-between;
-}
+
+
+/* ========================================
+   TEXT UTILITIES
+======================================== */
+
 .text_center {
     text-align: center;
 }
+
 .text_right {
     text-align: right;
 }
+
 .text_left {
     text-align: left;
 }
 
-/* define spacing utilities */
+
+/* ========================================
+   SPACING UTILITIES
+======================================== */
+
 .padding-top-3xs {
     padding-top: var(--space-3xs);
 }
- 
-/* create the wrappers */
+
+
+/* ========================================
+   WRAPPERS
+======================================== */
+
 .wrapper {
     width: 100%;
     max-width: 1240px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
+
 .wrapper_inner {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Style the header */
+
+/* ========================================
+   GENERAL SECTION STYLING
+======================================== */
+
+section {
+    padding: var(--space-2xl) var(--space-l);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
 .site_header {
-    padding: var(--space-s) 0;
-    background-color: linear-gradient(rgba(26, 26, 64, 0.9), rgba(26, 26, 64, 0.9));
+    padding: var(--space-s) var(--space-l);
+    background-color: #1a1a40;
 }
 
 .site_header_nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
 }
 
-/*Hero section styling*/
+.site_header_nav ul li a:hover {
+    color: #ffd700;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+section#hero {
+    background-color: #1a1a40;
+
+    background-image:
+        linear-gradient(
+            rgba(26, 26, 64, 0.85),
+            rgba(26, 26, 64, 0.85)
+        ),
+        url("assets/background_images.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    color: #ffffff;
+    padding-bottom: var(--space-s);
+
+    --color-accent: #8a2be2;
+}
+
 .hero_content {
     padding: var(--space-3xl) 0;
 }
 
 .hero_content h1 {
+    margin-top: 0;
     margin-bottom: var(--space-s);
 }
 
+.hero_content p {
+    margin: 0;
+}
+
 .hero_social {
-    padding-top: var(--space-3xl);
-}   
-
-/*General syling for the hero section*/
-section {
-    padding: var(--space-2xl) var(--space-l);
+    padding-top: var(--space-xl);
+    color: #ffffff;
 }
 
-section#hero {
-    background-color: linear-gradient(rgba(26, 26, 64, 0.9), rgba(26, 26, 64, 0.9)), 
-      url("../assets/background_images.jpg");
-    padding-bottom: 4px;
-    background-size: cover;
-    background-position: top;
-    background-attachment: scroll;
-    color: #fafafa;
-    --color-accent: #8a2be2;
+.hero_social address {
+    font-style: normal;
 }
 
-/* About section styling */
+
+/* ========================================
+   ABOUT SECTION
+======================================== */
+
+section#about {
+    background-color: #ffffff;
+    color: #333333;
+    --color-accent: #ffd700;
+}
+
 .about_content {
     padding: var(--space-xl) 0;
     transform: skewX(-10deg);
 }
 
-@media (max-width: 468px) {
-    .about_content {
-        transform: skewX(0deg);
-    }
-}
-
 .about_figure {
-   padding: var(--space-xl) 0;
-   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-   border: 2px solid #ccc;
-   display: inline-block;
-   padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #cccccc;
+    display: inline-block;
+    padding: 5px;
 }
 
 .about_img {
@@ -247,70 +352,163 @@ section#hero {
     padding: var(--space-3xs) 0;
 }
 
-section#about {
-    background-color: #ffffff;
-    color: #333;
-    --color-accent: #ffd700;
+@media (max-width: 468px) {
+    .about_content {
+        transform: skewX(0deg);
+    }
 }
 
-/* work section */
-.work_logos {
-  margin-top: var(--space-xl);
-}
+
+/* ========================================
+   WORK SECTION
+======================================== */
 
 section#work {
-  background-color: #87ceeb;
-  color: #0c0c0c;
-  --color-accent: #2e8b57;
+    background-color: #87ceeb;
+    color: #0c0c0c;
+    --color-accent: #2e8b57;
 }
 
-/* contact section */
+.work_logos {
+    margin-top: var(--space-xl);
+}
+
+.work_logos img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+section#contact {
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+section#contact .text_left {
+    margin-bottom: var(--space-xl);
+}
+
 .contact_form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact_form > .flex {
+    align-items: flex-start;
+}
+
+.contact_form > .flex .form_group {
+    flex: 1;
 }
 
 .form_group {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 label {
-  margin-bottom: 5px;
-  font-weight: bold;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+
+    background-color: #ffffff;
+    color: #333333;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 10px;
 }
 
 textarea {
-  resize: vertical;
-  height: 150px;
+    resize: vertical;
+    min-height: 150px;
 }
 
 button[type="submit"] {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: #007bff;
+    color: #ffffff;
+
+    cursor: pointer;
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
-/* footer section */
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background-color: #1a1a40;
+    color: #ffffff;
+}
+
 section#footer {
-  padding: var(--space-l) var(--space-l);
+    padding: var(--space-l);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 468px) {
+
+    section {
+        padding: var(--space-xl) var(--space-s);
+    }
+
+    .site_header {
+        padding: var(--space-s);
+    }
+
+    .site_header_nav ul {
+        flex-direction: column;
+    }
+
+    .hero_social {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about_content {
+        flex-direction: column;
+    }
+
+    .contact_form > .flex {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .work_logos {
+        justify-content: center;
+    }
+
+    .text_right {
+        text-align: center;
+    }
 }
